@@ -32,29 +32,23 @@ def get_distance(latitude1, longitude1, latitude2, longitude2):
     
     return distance
 
-def get_bearing(latitude1, longitude1, latitude2, longitude2):
-
-    phi1 = math.radians(latitude1)
-    phi2 = math.radians(latitude2) 
-
-    delta_lambda = math.radians(longitude2 - longitude1)
-
-    y = math.sin(delta_lambda/2.0) * math.sin(phi2)
-    x = math.cos(phi1) * math.sin(phi2) - math.sin(phi1) * math.cos(phi2) *math.cos(delta_lambda)
-
-    bearing_radians = math.atan2(y, x)
-    bearing_degrees = math.degrees(bearing_radians)
-
-    return bearing_degrees
-
 def get_initial_bearing(start_latitude, start_longitude, end_latitude, end_longitude):
-
+    """
+    Uses the Haversine formula with the mean Earth radius to calculate the initial bearing from point 1, accurate enough for
+    smaller distances.
+    
+    @param start_latitude: the latitude of point 1, in degrees
+    @param start_longitude: the latitude of point 1, in degrees
+    @param end_latitude: the longitude of point 2, in degrees
+    @param end_longitude: the longitude of point 2, in degrees
+    @return: distance between two points, in metres
+    """
     phi1 = math.radians(start_latitude)
     phi2 = math.radians(end_latitude) 
 
     delta_lambda = math.radians(end_longitude - start_longitude)
 
-    y = math.sin(delta_lambda/2.0) * math.sin(phi2)
+    y = math.sin(delta_lambda) * math.cos(phi2)
     x = math.cos(phi1) * math.sin(phi2) - math.sin(phi1) * math.cos(phi2) *math.cos(delta_lambda)
 
     bearing_radians = math.atan2(y, x)
