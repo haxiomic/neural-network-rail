@@ -4,6 +4,12 @@ import xmltodict
 __author__ = "David George Hopes"
 
 def importGPX(filepath):
+    """
+    Imports GPS data from .gpx file, returns list of python dicts
+
+    @param filepath: the absolute or relative filepath of the gpx
+    @return: list of python dicts containing GPS data
+    """
     with open(filepath) as infile:
         gps_data = xmltodict.parse(infile.read())
 
@@ -23,4 +29,5 @@ def importGPX(filepath):
         except KeyError:
             print('Error importing: {}'.format(offset))
     
+    # TODO return more efficient data structure
     return intervals
