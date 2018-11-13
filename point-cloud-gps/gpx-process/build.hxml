@@ -1,0 +1,8 @@
+-main Main
+-cp src
+
+-dce full
+-lib Console.hx
+-lib hxnodejs
+-js main.js
+-cmd node main.js

@@ -1,0 +1,13 @@
+{
+    "v2 unknown unknown 1920 1080 perspective 0": {
+        "focal_prior": 0.25, 
+        "width": 1920, 
+        "k1": 0.0, 
+        "k2": 0.0, 
+        "k1_prior": 0.0, 
+        "k2_prior": 0.0, 
+        "projection_type": "fisheye", 
+        "focal": 0.25, 
+        "height": 1080
+    }
+}
