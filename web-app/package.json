@@ -1,0 +1,17 @@
+{
+  "name": "basic",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "react-scripts start"
+  },
+  "devDependencies": {
+    "@mapbox/togeojson": "^0.16.0",
+    "fs-extra": "^7.0.1",
+    "react-scripts": "^1.0.10"
+  },
+  "dependencies": {
+    "mapbox-gl": "^0.39.1",
+    "react": "^15.5.0",
+    "react-dom": "^15.5.0"
+  }
+}
